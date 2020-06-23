@@ -69,8 +69,9 @@ try {
                 <th><?php echo "$value[id]"?></th>
                 <th><?php echo "$value[name]"?></th>
                 <th><?php echo "$value[age]"?></th>
+                <?php endforeach; ?>
               </tr>
-            <?php endforeach; ?>
+
           </tbody>
         </table>
       </div>
