@@ -70,7 +70,7 @@ try {
                 <th><?php echo "$value[name]"?></th>
                 <th><?php echo "$value[age]"?></th>
               </tr>
-            <php)}?>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>
