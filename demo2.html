@@ -1,52 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title></title>
-  </head>
-  <body>
-
-    <nav class="navber navber-dark bg-dark">
-      <div class="container-fluir">
-        <div class="navber-header">
-          <a href="" class="navber-brand">phpsample</a>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMP Smple Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="containar-fluer">
+            <div class="navbar-header">
+                <a href="demo.html" class="navbar-brand">LAMP Sample</a>
+            </div>
         </div>
-
-      </div>
     </nav>
-
     <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">DB-manager</h1>
-        <p class="lead">LAMP環境を構築し、DBを操作するアプリケーションです<br>
-                        デザインはBOOTSTRAPを使用しています。
-        </p>
-      </div>
+        <div class="container">
+            <h1 class="display-4">DB Manager</h1>
+            <p class="lead">LAMP環境を構築し、DBを操作するアプリケーションです。<br>
+                デザインはBootStrapを使用しています。
+            </p>
+        </div>
     </div>
-
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="table.php">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-
-  <!-- JS, Popper.js, and jQuery -->
-
+    <div class="container">
+        <ul class="nav nav-tabs">
+         <li class="nav-items"><a href="#tab1" class ="nav-link" data-toggle="tab">select</a></li>
+         <li class="nav-items"><a href="#tab2" class ="nav-link" data-toggle="tab">insert</a></li>
+         <li class="nav-items"><a href="#tab3" class ="nav-link" data-toggle="tab">update</a></li>
+         <li class="nav-items"><a href="#tab4" class ="nav-link" data-toggle="tab">delete</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab1" class="tab-pane active">
+                <table class="table table-striped table-bordered mt-2">
+                    <caption>Show User Table</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>user1</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>user2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td>user3</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tab2" class="tab-pane">
+                <form action="./insert.php" class="mt-5" method="POST">
+                    <div class="form-group row">
+                        <label for="id" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10" >
+                            <input class="form-control" type="text" name="id" id="id">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">NAME</label>
+                        <div class="col-sm-10" >
+                            <input class="form-control" type="text" name="name" id="name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="age" class="col-sm-2 col-form-label">AGE</label>
+                        <div class="col-sm-10" >
+                            <input class="form-control" type="text" name="age" id="age">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">insert</button>
+                </form>
+            </div>
+            <div id="tab3" class="tab-pane">sample3</div>
+            <div id="tab4" class="tab-pane">sample4</div>
+        </div>
+    </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
