@@ -54,21 +54,13 @@ try {
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($result as $value) {?>
                         <tr>
-                            <th>1</th>
-                            <td>user1</td>
-                            <td>10</td>
+                            <th><?php echo "$value[id]" ?></th>
+                            <td><?php echo "$value[name]" ?></td>
+                            <td><?php echo "$value[age]" ?></td>
                         </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>user2</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>user3</td>
-                            <td>30</td>
-                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
