@@ -6,20 +6,19 @@
         $dbh = new PDO($dsn, $user, $password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $age = $_POST['age'];
+        $id = $_GET['id'];
 
 
-        $sql = "update user set name=:name, age=:age  where id = :id";
+        $sql = "delete from user where id = :id";
         $stmt = $dbh->prepare($sql);
-        $params = array(':id' => $id, ':name' => $name, ':age' => $age);
+        $params = array(':id' => $id);
         $stmt->execute($params);
 
-        header('Location: index.php?ue=1');
+
+        header('Location: index.php?de=1');
 
     } catch (PDOException $e) {
-        header('Location: index.php?ue=2?err='. $e->getMessage());
+        header('Location: index.php?de=2?err='. $e->getMessage());
         exit();
     }
 ?>
